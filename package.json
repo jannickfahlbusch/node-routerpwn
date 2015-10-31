@@ -1,0 +1,19 @@
+{
+  "name": "routerpwn",
+  "version": "1.0.0",
+  "description": "Just a small library with some exploits for Routers",
+  "main": "routerpwn.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jannickfahlbusch/node-routerpwn.git"
+  },
+  "author": "Jannick Fahlbusch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jannickfahlbusch/node-routerpwn/issues"
+  },
+  "homepage": "https://github.com/jannickfahlbusch/node-routerpwn#readme"
+}
