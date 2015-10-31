@@ -22,7 +22,7 @@ var init = function(callback) {
 var getVendorForMac = function(macAddress) {
 	for(var macPrefix in vendors) {
 		if(macPrefix.indexOf(macAddress) > -1) {
-			return vendorObj;
+			return vendors[macPrefix];
 		}
 	}
 };
