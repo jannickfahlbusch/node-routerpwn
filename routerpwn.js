@@ -7,6 +7,7 @@ var vendors = {};
 var init = function(callback) {
 	csv.each('./macVendor/vendors.csv').on('data', function(data) {
 		vendors[data[1]] = {
+			'prefix': date[1],
 			'manufacturer': data[2],
 			'manufacturerAdress': data[3]
 		};
@@ -18,6 +19,26 @@ var init = function(callback) {
 	});
 };
 
-init(function(vendorList) {
-	console.log(vendorList);
-});
+var getVendorForMac = function(macAddress) {
+	for(var macPrefix in vendors) {
+		if(macPrefix.indexOf(macAddress) > -1) {
+			return vendorObj;
+		}
+	}
+};
+
+var pwn = function(macAddress) {
+	var vendor = getVendorForMac(macAddress);
+
+	switch (vendor.manufacturer) {
+		case 'Arcadyan Technology Corporation':
+			return require('./exploits/easybox.js')(macAddress);
+			break;
+	}
+}
+
+module.exports = {
+	init: init,
+	getVendorForMac: getVendorForMac,
+	pwn: pwn
+};
