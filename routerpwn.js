@@ -5,9 +5,9 @@ var vendors = {};
 
 
 var init = function(callback) {
-	csv.each('./macVendor/vendors.csv').on('data', function(data) {
+	csv.each(__dirname + '/macVendor/vendors.csv').on('data', function(data) {
 		vendors[data[1]] = {
-			'prefix': date[1],
+			'prefix': data[1],
 			'manufacturer': data[2],
 			'manufacturerAdress': data[3]
 		};
@@ -32,7 +32,7 @@ var pwn = function(macAddress) {
 
 	switch (vendor.manufacturer) {
 		case 'Arcadyan Technology Corporation':
-			return require('./exploits/easybox.js')(macAddress);
+			return require(__dirname + '/exploits/easybox.js')(macAddress);
 			break;
 	}
 }
