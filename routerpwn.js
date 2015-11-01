@@ -28,7 +28,7 @@ var getVendorForMac = function(macAddress) {
 };
 
 var pwn = function(macAddress) {
-	var vendor = getVendorForMac(macAddress);
+	var vendor = getVendorForMac(macAddress.replace(/:/g, '').replace(/-/g, ''));
 
 	switch (vendor.manufacturer) {
 		case 'Arcadyan Technology Corporation':
