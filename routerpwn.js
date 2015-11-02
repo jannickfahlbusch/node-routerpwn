@@ -46,13 +46,12 @@ var pwn = function(macAddress) {
 		case 'Arcadyan Technology Corporation':
 			return require(__dirname + '/exploits/easybox.js')(macAddress);
 			break;
+		default:
+			return {
+				'ssid': 'Unknown',
+				'passphrase': ''
+			};
 	}
-
-	//If nothing is successful, return an empty Object
-	return {
-		'ssid': 'Unknown',
-		'passphrase': ''
-	};
 }
 
 module.exports = {
