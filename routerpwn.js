@@ -32,6 +32,12 @@ var getVendorForMac = function(macAddress) {
 			return vendors[macPrefix];
 		}
 	}
+
+	return {
+		'prefix': null,
+		'manufactuer': null,
+		'manufactuerAddress: null
+	};
 };
 
 /**
